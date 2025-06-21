@@ -171,3 +171,11 @@ class SistemaAcoplamiento:
             print(f"[ERROR] Fallo al levantar rampa: {e}")
             return False
         
+    def bajar_rampa(self):
+        try:
+            time.sleep(1)
+            self.motor_rampa.desactivar()
+            return True
+        except Exception as e:
+            print(f"[ERROR] Fallo al bajar rampa: {e}")
+            return False
