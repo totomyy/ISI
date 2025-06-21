@@ -1,6 +1,8 @@
 import time
 
+
 # Dispositivos simulados
+
 
 class Motor:
     def __init__(self, nombre):
@@ -45,4 +47,49 @@ class Sensor:
     def desactivar(self):
         self.activo = False
 
+
+# Camion
+
+
+class Camion:
+    def __init__(self, id_camion, distancia_inicial, alineado_izq=True, alineado_der=True):
+        self.id = id_camion
+        self.distancia = distancia_inicial
+        self.alineado_izq = alineado_izq
+        self.alineado_der = alineado_der
+
+    def acercarse(self, metros):
+        if metros < 0:
+            raise ValueError("La distancia a avanzar debe ser positiva.")
+        self.distancia = max (0, self.distancia - metros)
+
+    def esta_alineado(self):
+        return self.alineado_izq and self.alineado_der
+    
+
+# Sistema de Acoplamiento
+
+
+class SistemaAcoplamiento:
+    def __init__(self, distancia_activacion = 1, tolerancia_distancia = 0.5, tiempo_maximo_espera = 15):
+        self.distancia_activacion = distancia_activacion
+        self.tolerancia_distancia = tolerancia_distancia
+        self.tiempo_maximo_espera = tiempo_maximo_espera
+
+        # Componentes fisicos
+        self.motor_cortina = Motor("Cortina")
+        self.motor_rampa = Motor("Rampa")
+
+        self.luz_roja = Luz("rojo")
+        self.luz_amarilla = Luz("amarillo")
+        self.luz_verde = Luz("verde")
+
+        self.sensor_izq = Sensor("alineacion_izquierda")
+        self.sensor_der = Sensor("alineacion_derecha")
+        self.sensor_distancia = Sensor("distancia")
+
+    def encender_luz_unica(self, luz):
+        for i in [self.luz_roja, self.luz_amarilla, self.luz_verde]:
+            i.apagar()
+        luz.encender()
         
