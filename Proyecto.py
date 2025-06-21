@@ -107,3 +107,46 @@ class SistemaAcoplamiento:
             print(f"[ERROR] Fallo en sensores de alineacion: {e}")
             return False
         
+    def verificar_distancia(self, distancia_actual):
+        try:
+            distancia_sensor = self.sensor_distancia.leer()
+            diferencia = abs(distancia_actual - distancia_sensor)
+            if diferencia > self.tolerancia_distancia:
+                raise ValueError("Diferencia entre sensor y distancia esperada supera la tolerancia.")
+            return distancia_sensor <= self.distancia_activacion
+        except Exception as e:
+            self.encender_luz_unica(self.luz_roja)
+            print(f"[ERROR] Sensor de distancia defectuoso: {e}")
+            return False
+
+    def acoplar_camion(self, camion):
+        print(f"[INFO] Iniciando acoplamiento del camion {camion.id}...")
+
+        if not self.verificar_alineacion(camion):
+            return
+        
+        tiempo_espera = 0
+        while not self.verificar_distancia(camion.distancia):
+            self.encender_luz_unica(self.luz_roja)
+            print("[INFO] Camion aun no esta en posicion. Esperando avance...")
+            time.sleep(1)
+            tiempo_espera += 1
+            if tiempo_espera > self.tiempo_maximo_espera:
+                print("[ERROR] Tiempo de espera excedido. Abortando operacion.")
+                return
+            camion.acercarse(0.5)
+            self.sensor_distancia.set_valor(camion.distancia)
+        
+        self.encender_luz_unica(self.luz_verde)
+        print("[INFO] Camion en posicion adecuada.")
+
+        if not self.abrir_cortina():
+            return
+        if not self.levantar_rampa():
+            return
+        if not self.bajar_rampa():
+            return
+        
+        self.encender_luz_unica(self.luz_verde)
+        print(f"[INFO] Camion {camion.id} acoplado correctamente.")
+        
