@@ -92,4 +92,18 @@ class SistemaAcoplamiento:
         for i in [self.luz_roja, self.luz_amarilla, self.luz_verde]:
             i.apagar()
         luz.encender()
+
+    def verificar_alineacion(self, camion):
+        try:
+            alineado_izq = camion.alineado_izq and self.sensor_izq.leer()
+            alineado_der = camion.alineado_der and self.sensor_der.leer()
+            if not (alineado_izq and alineado_der):
+                self.encender_luz_unica(self.luz_roja)
+                print("[ALERTA] Camion desalineado. Solicitar corrección manual.")
+                return False
+            return True
+        except Exception as e:
+            self.encender_luz_unica(self.luz_roja)
+            print(f"[ERROR] Fallo en sensores de alineacion: {e}")
+            return False
         
