@@ -149,4 +149,25 @@ class SistemaAcoplamiento:
         
         self.encender_luz_unica(self.luz_verde)
         print(f"[INFO] Camion {camion.id} acoplado correctamente.")
+
+    def abrir_cortina(self):
+        try:
+            self.encender_luz_unica(self.luz_amarilla)
+            self.motor_cortina.activar()
+            time.sleep(2)
+            self.motor_cortina.desactivar()
+            return True
+        except Exception as e:
+            print(f"[ERROR] Fallo al abrir la cortina: {e}")
+            return False
+        
+    def levantar_rampa(self):
+        try:
+            self.encender_luz_unica(self.luz_amarilla)
+            self.motor_rampa.activar()
+            time.sleep(2)
+            return True
+        except Exception as e:
+            print(f"[ERROR] Fallo al levantar rampa: {e}")
+            return False
         
