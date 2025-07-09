@@ -1,0 +1,264 @@
+2025-07-09T03:23:37.756173 [SISTEMA] Sistema de acoplamiento inicializado.
+2025-07-09T03:23:37.756267 [SISTEMA] --- INICIO DE SIMULACIONES ---
+2025-07-09T03:23:37.756334 [SIM] Inicio Simulación 1: Camión normal
+2025-07-09T03:23:37.756379 [INFO] [Camión C-101] Iniciando proceso de acoplamiento.
+2025-07-09T03:23:37.756430 [DEBUG] [Camión C-101] Verificando tamaño del objeto: 25
+2025-07-09T03:23:37.756469 [INFO] [Camión C-101] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 25).
+2025-07-09T03:23:37.756506 [INFO] [Camión C-101] Camión alineado según sensores.
+2025-07-09T03:23:37.756544 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:37.756575 [INFO] [Camión C-101] Camión alineado y de tamaño correcto. Esperando posicionamiento...
+2025-07-09T03:23:37.756614 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:37.756649 [INFO] [Camión C-101] Luz VERDE encendida.
+2025-07-09T03:23:37.756689 [INFO] [Camión C-101] Camión en posición adecuada (1.0m).
+2025-07-09T03:23:37.756722 [DEBUG] [Camión C-101] Verificando desnivel del camión: 2cm
+2025-07-09T03:23:37.756762 [INFO] [Camión C-101] RF-3.1: Desnivel del camión (2cm) dentro de la tolerancia.
+2025-07-09T03:23:37.756795 [INFO] [Camión C-101] Abriendo cortina...
+2025-07-09T03:23:37.756828 [DEBUG] [Camión C-101] Luz VERDE apagada.
+2025-07-09T03:23:37.756860 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:37.756893 [DEBUG] [Camión C-101] Motor Cortina activado para abriendo cortina.
+2025-07-09T03:23:39.758156 [DEBUG] [Camión C-101] Motor Cortina desactivado.
+2025-07-09T03:23:39.758341 [INFO] [Camión C-101] Cortina abierta.
+2025-07-09T03:23:39.758507 [INFO] [Camión C-101] Levantando rampa...
+2025-07-09T03:23:39.758582 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:39.758634 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:39.758686 [DEBUG] [Camión C-101] Motor Rampa activado para levantar rampa.
+2025-07-09T03:23:41.759056 [INFO] [Camión C-101] Rampa levantada.
+2025-07-09T03:23:41.759391 [INFO] [Camión C-101] Bajando rampa sobre el camión...
+2025-07-09T03:23:41.759468 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:41.759521 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:42.759853 [DEBUG] [Camión C-101] Motor Rampa desactivado, rampa bajada.
+2025-07-09T03:23:42.760069 [INFO] [Camión C-101] Rampa bajada y posicionada.
+2025-07-09T03:23:42.760130 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:42.760168 [INFO] [Camión C-101] Luz VERDE encendida.
+2025-07-09T03:23:42.760203 [INFO] [Camión C-101] Camión acoplado correctamente.
+2025-07-09T03:23:42.760239 [SIM] [Camión C-101] Camión acoplado, iniciando desacoplamiento...
+2025-07-09T03:23:44.760666 [INFO] [Camión C-101] Iniciando secuencia de cierre automático / desacoplamiento.
+2025-07-09T03:23:44.760851 [DEBUG] [Camión C-101] Verificando estado de la rampa antes de operar para cierre.
+2025-07-09T03:23:44.761003 [INFO] [Camión C-101] Retrayendo/subiendo rampa...
+2025-07-09T03:23:44.761064 [DEBUG] [Camión C-101] Luz VERDE apagada.
+2025-07-09T03:23:44.761105 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:44.761143 [DEBUG] [Camión C-101] Motor Rampa activado para retraer rampa.
+2025-07-09T03:23:46.761478 [DEBUG] [Camión C-101] Motor Rampa desactivado.
+2025-07-09T03:23:46.761682 [INFO] [Camión C-101] Rampa retraída/subida.
+2025-07-09T03:23:46.761742 [INFO] [Camión C-101] Cerrando cortina...
+2025-07-09T03:23:46.762387 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:46.762611 [INFO] [Camión C-101] Luz AMARILLO encendida.
+2025-07-09T03:23:46.762676 [DEBUG] [Camión C-101] Motor Cortina activado para cerrando cortina.
+2025-07-09T03:23:48.763031 [DEBUG] [Camión C-101] Motor Cortina desactivado.
+2025-07-09T03:23:48.763195 [INFO] [Camión C-101] Cortina cerrada.
+2025-07-09T03:23:48.763246 [DEBUG] [Camión C-101] Luz AMARILLO apagada.
+2025-07-09T03:23:48.763285 [INFO] [Camión C-101] Luz ROJO encendida.
+2025-07-09T03:23:48.763320 [INFO] [Camión C-101] Secuencia de cierre completada. Muelle asegurado. Camión puede retirarse.
+2025-07-09T03:23:48.763453 [SIM] Fin Simulación 1
+2025-07-09T03:23:48.763510 [SIM] Inicio Simulación 2: Objeto Pequeño
+2025-07-09T03:23:48.763553 [INFO] [Camión Obj-002] Iniciando proceso de acoplamiento.
+2025-07-09T03:23:48.763592 [DEBUG] [Camión Obj-002] Verificando tamaño del objeto: 5
+2025-07-09T03:23:48.763626 [ALERTA] [Camión Obj-002] RF-1.1: Objeto pequeño detectado (tamaño: 5). Ignorando aproximación.
+2025-07-09T03:23:48.763776 [DEBUG] [Camión Obj-002] Luz ROJO apagada.
+2025-07-09T03:23:48.763815 [INFO] [Camión Obj-002] Luz ROJO encendida.
+2025-07-09T03:23:48.763847 [SIM] Fin Simulación 2
+2025-07-09T03:23:48.763881 [SIM] Inicio Simulación 3: Camión Desalineado
+2025-07-09T03:23:48.763918 [INFO] [Camión C-103] Iniciando proceso de acoplamiento.
+2025-07-09T03:23:48.763991 [DEBUG] [Camión C-103] Verificando tamaño del objeto: 30
+2025-07-09T03:23:48.764031 [INFO] [Camión C-103] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 30).
+2025-07-09T03:23:48.764069 [DEBUG] [Camión C-103] Luz ROJO apagada.
+2025-07-09T03:23:48.764103 [INFO] [Camión C-103] Luz ROJO encendida.
+2025-07-09T03:23:48.764133 [ALERTA] [Camión C-103] Camión desalineado según sensores. Solicitar corrección manual.
+2025-07-09T03:23:48.764165 [SIM] Fin Simulación 3
+2025-07-09T03:23:48.764231 [SISTEMA] Sistema de acoplamiento inicializado.
+2025-07-09T03:23:48.764245 [SIM] Inicio Simulación 4: Camión Tarda Demasiado
+2025-07-09T03:23:48.764280 [INFO] [Camión C-104] Iniciando proceso de acoplamiento.
+2025-07-09T03:23:48.764315 [DEBUG] [Camión C-104] Verificando tamaño del objeto: 25
+2025-07-09T03:23:48.764345 [INFO] [Camión C-104] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 25).
+2025-07-09T03:23:48.764377 [INFO] [Camión C-104] Camión alineado según sensores.
+2025-07-09T03:23:48.764420 [INFO] [Camión C-104] Luz AMARILLO encendida.
+2025-07-09T03:23:48.764453 [INFO] [Camión C-104] Camión alineado y de tamaño correcto. Esperando posicionamiento...
+2025-07-09T03:23:48.764489 [DEBUG] [Camión C-104] Luz AMARILLO apagada.
+2025-07-09T03:23:48.764521 [INFO] [Camión C-104] Luz ROJO encendida.
+2025-07-09T03:23:48.764577 [INFO] [Camión C-104] Camión a 10.0m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:49.764896 [DEBUG] [Camión C-104] Camión avanza a 9.5m.
+2025-07-09T03:23:49.765124 [DEBUG] [Camión C-104] Luz ROJO apagada.
+2025-07-09T03:23:49.765172 [INFO] [Camión C-104] Luz ROJO encendida.
+2025-07-09T03:23:49.765213 [INFO] [Camión C-104] Camión a 9.5m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:50.765493 [DEBUG] [Camión C-104] Camión avanza a 9.0m.
+2025-07-09T03:23:50.765671 [DEBUG] [Camión C-104] Luz ROJO apagada.
+2025-07-09T03:23:50.765738 [INFO] [Camión C-104] Luz ROJO encendida.
+2025-07-09T03:23:50.765786 [INFO] [Camión C-104] Camión a 9.0m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:51.766108 [DEBUG] [Camión C-104] Camión avanza a 8.5m.
+2025-07-09T03:23:51.766466 [DEBUG] [Camión C-104] Luz ROJO apagada.
+2025-07-09T03:23:51.766546 [INFO] [Camión C-104] Luz ROJO encendida.
+2025-07-09T03:23:51.766600 [INFO] [Camión C-104] Camión a 8.5m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:52.766892 [ERROR] [Camión C-104] Tiempo de espera (3s) excedido. Abortando operación.
+2025-07-09T03:23:52.767120 [DEBUG] [Camión C-104] Luz ROJO apagada.
+2025-07-09T03:23:52.767169 [INFO] [Camión C-104] Luz ROJO encendida.
+2025-07-09T03:23:52.767205 [SIM] Fin Simulación 4
+2025-07-09T03:23:52.767241 [SIM] Inicio Simulación 5: Camión se acerca progresivamente
+2025-07-09T03:23:52.767280 [INFO] [Camión C-105] Iniciando proceso de acoplamiento.
+2025-07-09T03:23:52.767316 [DEBUG] [Camión C-105] Verificando tamaño del objeto: 25
+2025-07-09T03:23:52.767351 [INFO] [Camión C-105] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 25).
+2025-07-09T03:23:52.767385 [INFO] [Camión C-105] Camión alineado según sensores.
+2025-07-09T03:23:52.767420 [DEBUG] [Camión C-105] Luz ROJO apagada.
+2025-07-09T03:23:52.767461 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:23:52.767561 [INFO] [Camión C-105] Camión alineado y de tamaño correcto. Esperando posicionamiento...
+2025-07-09T03:23:52.767611 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:23:52.767750 [INFO] [Camión C-105] Luz ROJO encendida.
+2025-07-09T03:23:52.767810 [INFO] [Camión C-105] Camión a 3.0m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:53.768117 [DEBUG] [Camión C-105] Camión avanza a 2.5m.
+2025-07-09T03:23:53.768305 [DEBUG] [Camión C-105] Luz ROJO apagada.
+2025-07-09T03:23:53.768357 [INFO] [Camión C-105] Luz ROJO encendida.
+2025-07-09T03:23:53.768403 [INFO] [Camión C-105] Camión a 2.5m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:54.768740 [DEBUG] [Camión C-105] Camión avanza a 2.0m.
+2025-07-09T03:23:54.768978 [DEBUG] [Camión C-105] Luz ROJO apagada.
+2025-07-09T03:23:54.769045 [INFO] [Camión C-105] Luz ROJO encendida.
+2025-07-09T03:23:54.769095 [INFO] [Camión C-105] Camión a 2.0m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:55.769405 [DEBUG] [Camión C-105] Camión avanza a 1.5m.
+2025-07-09T03:23:55.769609 [DEBUG] [Camión C-105] Luz ROJO apagada.
+2025-07-09T03:23:55.769654 [INFO] [Camión C-105] Luz ROJO encendida.
+2025-07-09T03:23:55.769697 [INFO] [Camión C-105] Camión a 1.5m. Objetivo: <= 1m. Esperando avance...
+2025-07-09T03:23:56.770051 [DEBUG] [Camión C-105] Camión avanza a 1.0m.
+2025-07-09T03:23:56.770264 [DEBUG] [Camión C-105] Luz ROJO apagada.
+2025-07-09T03:23:56.770320 [INFO] [Camión C-105] Luz VERDE encendida.
+2025-07-09T03:23:56.770852 [INFO] [Camión C-105] Camión en posición adecuada (1.0m).
+2025-07-09T03:23:56.771084 [DEBUG] [Camión C-105] Verificando desnivel del camión: 1cm
+2025-07-09T03:23:56.771148 [INFO] [Camión C-105] RF-3.1: Desnivel del camión (1cm) dentro de la tolerancia.
+2025-07-09T03:23:56.771187 [INFO] [Camión C-105] Abriendo cortina...
+2025-07-09T03:23:56.771228 [DEBUG] [Camión C-105] Luz VERDE apagada.
+2025-07-09T03:23:56.771263 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:23:56.771298 [DEBUG] [Camión C-105] Motor Cortina activado para abriendo cortina.
+2025-07-09T03:23:58.771591 [DEBUG] [Camión C-105] Motor Cortina desactivado.
+2025-07-09T03:23:58.771850 [INFO] [Camión C-105] Cortina abierta.
+2025-07-09T03:23:58.771953 [INFO] [Camión C-105] Levantando rampa...
+2025-07-09T03:23:58.772014 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:23:58.772054 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:23:58.772092 [DEBUG] [Camión C-105] Motor Rampa activado para levantar rampa.
+2025-07-09T03:24:00.772385 [INFO] [Camión C-105] Rampa levantada.
+2025-07-09T03:24:00.772572 [INFO] [Camión C-105] Bajando rampa sobre el camión...
+2025-07-09T03:24:00.772623 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:24:00.772665 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:24:01.772983 [DEBUG] [Camión C-105] Motor Rampa desactivado, rampa bajada.
+2025-07-09T03:24:01.773177 [INFO] [Camión C-105] Rampa bajada y posicionada.
+2025-07-09T03:24:01.773239 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:24:01.773742 [INFO] [Camión C-105] Luz VERDE encendida.
+2025-07-09T03:24:01.773979 [INFO] [Camión C-105] Camión acoplado correctamente.
+2025-07-09T03:24:01.774035 [SIM] [Camión C-105] Acoplado con éxito. Procediendo a desacoplar.
+2025-07-09T03:24:02.774306 [INFO] [Camión C-105] Iniciando secuencia de cierre automático / desacoplamiento.
+2025-07-09T03:24:02.774527 [DEBUG] [Camión C-105] Verificando estado de la rampa antes de operar para cierre.
+2025-07-09T03:24:02.774576 [INFO] [Camión C-105] Retrayendo/subiendo rampa...
+2025-07-09T03:24:02.774618 [DEBUG] [Camión C-105] Luz VERDE apagada.
+2025-07-09T03:24:02.774657 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:24:02.774694 [DEBUG] [Camión C-105] Motor Rampa activado para retraer rampa.
+2025-07-09T03:24:04.774996 [DEBUG] [Camión C-105] Motor Rampa desactivado.
+2025-07-09T03:24:04.775155 [INFO] [Camión C-105] Rampa retraída/subida.
+2025-07-09T03:24:04.775269 [INFO] [Camión C-105] Cerrando cortina...
+2025-07-09T03:24:04.775325 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:24:04.775372 [INFO] [Camión C-105] Luz AMARILLO encendida.
+2025-07-09T03:24:04.775408 [DEBUG] [Camión C-105] Motor Cortina activado para cerrando cortina.
+2025-07-09T03:24:06.775719 [DEBUG] [Camión C-105] Motor Cortina desactivado.
+2025-07-09T03:24:06.775950 [INFO] [Camión C-105] Cortina cerrada.
+2025-07-09T03:24:06.776015 [DEBUG] [Camión C-105] Luz AMARILLO apagada.
+2025-07-09T03:24:06.776053 [INFO] [Camión C-105] Luz ROJO encendida.
+2025-07-09T03:24:06.776086 [INFO] [Camión C-105] Secuencia de cierre completada. Muelle asegurado. Camión puede retirarse.
+2025-07-09T03:24:06.776121 [SIM] Fin Simulación 5
+2025-07-09T03:24:06.776155 [SIM] Inicio Simulación 6: Camión con Desnivel Excesivo
+2025-07-09T03:24:06.776193 [INFO] [Camión C-106] Iniciando proceso de acoplamiento.
+2025-07-09T03:24:06.776230 [DEBUG] [Camión C-106] Verificando tamaño del objeto: 25
+2025-07-09T03:24:06.776460 [INFO] [Camión C-106] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 25).
+2025-07-09T03:24:06.776511 [INFO] [Camión C-106] Camión alineado según sensores.
+2025-07-09T03:24:06.776548 [DEBUG] [Camión C-106] Luz ROJO apagada.
+2025-07-09T03:24:06.776582 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:06.776754 [INFO] [Camión C-106] Camión alineado y de tamaño correcto. Esperando posicionamiento...
+2025-07-09T03:24:06.776807 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:06.776842 [INFO] [Camión C-106] Luz VERDE encendida.
+2025-07-09T03:24:06.776917 [INFO] [Camión C-106] Camión en posición adecuada (0.5m).
+2025-07-09T03:24:06.777086 [DEBUG] [Camión C-106] Verificando desnivel del camión: 10cm
+2025-07-09T03:24:06.777127 [ALERTA] [Camión C-106] RF-3.1: Desnivel del camión (10cm) excede la tolerancia (5cm).
+2025-07-09T03:24:06.777160 [INFO] [Camión C-106] Abriendo cortina...
+2025-07-09T03:24:06.777195 [DEBUG] [Camión C-106] Luz VERDE apagada.
+2025-07-09T03:24:06.777231 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:06.777265 [DEBUG] [Camión C-106] Motor Cortina activado para abriendo cortina.
+2025-07-09T03:24:08.777586 [DEBUG] [Camión C-106] Motor Cortina desactivado.
+2025-07-09T03:24:08.777785 [INFO] [Camión C-106] Cortina abierta.
+2025-07-09T03:24:08.777843 [INFO] [Camión C-106] Levantando rampa...
+2025-07-09T03:24:08.777953 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:08.778001 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:08.778038 [DEBUG] [Camión C-106] Motor Rampa activado para levantar rampa.
+2025-07-09T03:24:10.778335 [INFO] [Camión C-106] Rampa levantada.
+2025-07-09T03:24:10.778524 [INFO] [Camión C-106] Bajando rampa sobre el camión...
+2025-07-09T03:24:10.778575 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:10.778614 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:11.779006 [DEBUG] [Camión C-106] Motor Rampa desactivado, rampa bajada.
+2025-07-09T03:24:11.779185 [INFO] [Camión C-106] Rampa bajada y posicionada.
+2025-07-09T03:24:11.779245 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:11.779292 [INFO] [Camión C-106] Luz VERDE encendida.
+2025-07-09T03:24:11.779369 [INFO] [Camión C-106] Camión acoplado correctamente.
+2025-07-09T03:24:11.779417 [SIM] [Camión C-106] Acoplado (con alerta de desnivel). Procediendo a desacoplar.
+2025-07-09T03:24:12.779704 [INFO] [Camión C-106] Iniciando secuencia de cierre automático / desacoplamiento.
+2025-07-09T03:24:12.779957 [DEBUG] [Camión C-106] Verificando estado de la rampa antes de operar para cierre.
+2025-07-09T03:24:12.780026 [INFO] [Camión C-106] Retrayendo/subiendo rampa...
+2025-07-09T03:24:12.780073 [DEBUG] [Camión C-106] Luz VERDE apagada.
+2025-07-09T03:24:12.780112 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:12.780149 [DEBUG] [Camión C-106] Motor Rampa activado para retraer rampa.
+2025-07-09T03:24:14.780494 [DEBUG] [Camión C-106] Motor Rampa desactivado.
+2025-07-09T03:24:14.780736 [INFO] [Camión C-106] Rampa retraída/subida.
+2025-07-09T03:24:14.780796 [INFO] [Camión C-106] Cerrando cortina...
+2025-07-09T03:24:14.780837 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:14.780922 [INFO] [Camión C-106] Luz AMARILLO encendida.
+2025-07-09T03:24:14.780963 [DEBUG] [Camión C-106] Motor Cortina activado para cerrando cortina.
+2025-07-09T03:24:16.781256 [DEBUG] [Camión C-106] Motor Cortina desactivado.
+2025-07-09T03:24:16.781447 [INFO] [Camión C-106] Cortina cerrada.
+2025-07-09T03:24:16.781496 [DEBUG] [Camión C-106] Luz AMARILLO apagada.
+2025-07-09T03:24:16.781533 [INFO] [Camión C-106] Luz ROJO encendida.
+2025-07-09T03:24:16.781565 [INFO] [Camión C-106] Secuencia de cierre completada. Muelle asegurado. Camión puede retirarse.
+2025-07-09T03:24:16.781604 [SIM] Fin Simulación 6
+2025-07-09T03:24:16.781637 [SIM] Inicio Simulación 7: Camión con Desnivel Aceptable
+2025-07-09T03:24:16.781675 [INFO] [Camión C-107] Iniciando proceso de acoplamiento.
+2025-07-09T03:24:16.781715 [DEBUG] [Camión C-107] Verificando tamaño del objeto: 25
+2025-07-09T03:24:16.781748 [INFO] [Camión C-107] RF-1.1: Objeto de tamaño adecuado detectado (tamaño: 25).
+2025-07-09T03:24:16.781780 [INFO] [Camión C-107] Camión alineado según sensores.
+2025-07-09T03:24:16.781812 [DEBUG] [Camión C-107] Luz ROJO apagada.
+2025-07-09T03:24:16.781898 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:16.781947 [INFO] [Camión C-107] Camión alineado y de tamaño correcto. Esperando posicionamiento...
+2025-07-09T03:24:16.781986 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:16.782018 [INFO] [Camión C-107] Luz VERDE encendida.
+2025-07-09T03:24:16.782056 [INFO] [Camión C-107] Camión en posición adecuada (0.5m).
+2025-07-09T03:24:16.782087 [DEBUG] [Camión C-107] Verificando desnivel del camión: -4cm
+2025-07-09T03:24:16.782120 [INFO] [Camión C-107] RF-3.1: Desnivel del camión (-4cm) dentro de la tolerancia.
+2025-07-09T03:24:16.782151 [INFO] [Camión C-107] Abriendo cortina...
+2025-07-09T03:24:16.782182 [DEBUG] [Camión C-107] Luz VERDE apagada.
+2025-07-09T03:24:16.782214 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:16.782246 [DEBUG] [Camión C-107] Motor Cortina activado para abriendo cortina.
+2025-07-09T03:24:18.782561 [DEBUG] [Camión C-107] Motor Cortina desactivado.
+2025-07-09T03:24:18.782828 [INFO] [Camión C-107] Cortina abierta.
+2025-07-09T03:24:18.783013 [INFO] [Camión C-107] Levantando rampa...
+2025-07-09T03:24:18.783067 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:18.783103 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:18.783137 [DEBUG] [Camión C-107] Motor Rampa activado para levantar rampa.
+2025-07-09T03:24:20.783417 [INFO] [Camión C-107] Rampa levantada.
+2025-07-09T03:24:20.783597 [INFO] [Camión C-107] Bajando rampa sobre el camión...
+2025-07-09T03:24:20.783760 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:20.783807 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:21.784194 [DEBUG] [Camión C-107] Motor Rampa desactivado, rampa bajada.
+2025-07-09T03:24:21.784392 [INFO] [Camión C-107] Rampa bajada y posicionada.
+2025-07-09T03:24:21.784453 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:21.784494 [INFO] [Camión C-107] Luz VERDE encendida.
+2025-07-09T03:24:21.784529 [INFO] [Camión C-107] Camión acoplado correctamente.
+2025-07-09T03:24:21.784565 [SIM] [Camión C-107] Acoplado con desnivel aceptable. Procediendo a desacoplar.
+2025-07-09T03:24:22.784916 [INFO] [Camión C-107] Iniciando secuencia de cierre automático / desacoplamiento.
+2025-07-09T03:24:22.785095 [DEBUG] [Camión C-107] Verificando estado de la rampa antes de operar para cierre.
+2025-07-09T03:24:22.785139 [INFO] [Camión C-107] Retrayendo/subiendo rampa...
+2025-07-09T03:24:22.785182 [DEBUG] [Camión C-107] Luz VERDE apagada.
+2025-07-09T03:24:22.785220 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:22.785271 [DEBUG] [Camión C-107] Motor Rampa activado para retraer rampa.
+2025-07-09T03:24:24.785681 [DEBUG] [Camión C-107] Motor Rampa desactivado.
+2025-07-09T03:24:24.785895 [INFO] [Camión C-107] Rampa retraída/subida.
+2025-07-09T03:24:24.785955 [INFO] [Camión C-107] Cerrando cortina...
+2025-07-09T03:24:24.785995 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:24.786029 [INFO] [Camión C-107] Luz AMARILLO encendida.
+2025-07-09T03:24:24.786202 [DEBUG] [Camión C-107] Motor Cortina activado para cerrando cortina.
+2025-07-09T03:24:26.786504 [DEBUG] [Camión C-107] Motor Cortina desactivado.
+2025-07-09T03:24:26.786715 [INFO] [Camión C-107] Cortina cerrada.
+2025-07-09T03:24:26.786804 [DEBUG] [Camión C-107] Luz AMARILLO apagada.
+2025-07-09T03:24:26.786944 [INFO] [Camión C-107] Luz ROJO encendida.
+2025-07-09T03:24:26.787009 [INFO] [Camión C-107] Secuencia de cierre completada. Muelle asegurado. Camión puede retirarse.
+2025-07-09T03:24:26.787070 [SIM] Fin Simulación 7
+2025-07-09T03:24:26.787127 [SISTEMA] --- FIN DE TODAS LAS SIMULACIONES ---
