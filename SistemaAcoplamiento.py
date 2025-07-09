@@ -1,16 +1,12 @@
 from Clases import *
-import time
-
-# Sistema de Acoplamiento
-
 
 class SistemaAcoplamiento:
-    def __init__(self, distancia_activacion = 1, tolerancia_distancia = 0.5, tiempo_maximo_espera = 15):
+    def __init__(self, distancia_activacion = 1, tolerancia_distancia = 0.5, tiempo_maximo_espera_seg = 5): 
         self.distancia_activacion = distancia_activacion
         self.tolerancia_distancia = tolerancia_distancia
-        self.tiempo_maximo_espera = tiempo_maximo_espera
+        self.tiempo_maximo_espera_seg = tiempo_maximo_espera_seg
+        self.tiempo_espera_actual = 0
 
-        # Componentes fisicos
         self.motor_cortina = Motor("Cortina")
         self.motor_rampa = Motor("Rampa")
 
@@ -18,98 +14,141 @@ class SistemaAcoplamiento:
         self.luz_amarilla = Luz("amarillo")
         self.luz_verde = Luz("verde")
 
-        self.sensor_izq = Sensor("alineacion_izquierda")
-        self.sensor_der = Sensor("alineacion_derecha")
-        self.sensor_distancia = Sensor("distancia")
+        self.sensor_izq = Sensor("alineacion_izquierda", valor_inicial=False) 
+        self.sensor_der = Sensor("alineacion_derecha", valor_inicial=False)
+        self.sensor_distancia = Sensor("distancia", valor_inicial=100)
 
-    def encender_luz_unica(self, luz):
-        for i in [self.luz_roja, self.luz_amarilla, self.luz_verde]:
-            i.apagar()
-        luz.encender()
+        self.estado_acoplamiento = "INICIO"
 
-    def verificar_alineacion(self, camion):
+    def encender_luz_unica(self, luz_a_encender):
+        for luz_actual in [self.luz_roja, self.luz_amarilla, self.luz_verde]:
+            if luz_actual == luz_a_encender:
+                luz_actual.encender()
+            else:
+                luz_actual.apagar()
+
+    def verificar_alineacion(self, camion): 
         try:
-            alineado_izq = camion.alineado_izq and self.sensor_izq.leer()
-            alineado_der = camion.alineado_der and self.sensor_der.leer()
-            if not (alineado_izq and alineado_der):
+            alineado_izq_logica = self.sensor_izq.leer()
+            alineado_der_logica = self.sensor_der.leer() 
+
+            if not (alineado_izq_logica and alineado_der_logica):
                 self.encender_luz_unica(self.luz_roja)
-                print("[ALERTA] Camion desalineado. Solicitar corrección manual.")
+                self.estado_acoplamiento = "ERROR_ALINEACION"
                 return False
             return True
         except Exception as e:
             self.encender_luz_unica(self.luz_roja)
-            print(f"[ERROR] Fallo en sensores de alineacion: {e}")
+            self.estado_acoplamiento = "ERROR_SENSOR_ALINEACION"
             return False
-        
-    def verificar_distancia(self, distancia_actual):
+
+    def verificar_distancia(self, distancia_camion_al_muelle):
         try:
-            distancia_sensor = self.sensor_distancia.leer()
-            diferencia = abs(distancia_actual - distancia_sensor)
-            if diferencia > self.tolerancia_distancia:
-                raise ValueError("Diferencia entre sensor y distancia esperada supera la tolerancia.")
-            return distancia_sensor <= self.distancia_activacion
+            distancia_sensor_leida = self.sensor_distancia.leer()
+
+            if distancia_sensor_leida <= self.distancia_activacion:
+                return True
+            else:
+                return False
+
         except Exception as e:
             self.encender_luz_unica(self.luz_roja)
-            print(f"[ERROR] Sensor de distancia defectuoso: {e}")
+            self.estado_acoplamiento = "ERROR_SENSOR_DISTANCIA"
             return False
 
-    def acoplar_camion(self, camion):
-        print(f"[INFO] Iniciando acoplamiento del camion {camion.id}...")
+    def iniciar_proceso_acoplamiento(self, camion_logica):
+        self.estado_acoplamiento = "VERIFICANDO_ALINEACION"
+        self.tiempo_espera_actual = 0
+        self.sensor_izq.set_valor(camion_logica.alineado_izq)
+        self.sensor_der.set_valor(camion_logica.alineado_der)
+        self.sensor_distancia.set_valor(camion_logica.distancia_al_muelle)
 
-        if not self.verificar_alineacion(camion):
-            return
-        
-        tiempo_espera = 0
-        while not self.verificar_distancia(camion.distancia):
-            self.encender_luz_unica(self.luz_roja)
-            print("[INFO] Camion aun no esta en posicion. Esperando avance...")
-            time.sleep(1)
-            tiempo_espera += 1
-            if tiempo_espera > self.tiempo_maximo_espera:
-                print("[ERROR] Tiempo de espera excedido. Abortando operacion.")
-                return
-            camion.acercarse(0.5)
-            self.sensor_distancia.set_valor(camion.distancia)
-        
-        self.encender_luz_unica(self.luz_verde)
-        print("[INFO] Camion en posicion adecuada.")
+    def acoplar_camion_paso_a_paso(self, camion_logica, delta_time_seg):
+        self.sensor_izq.set_valor(camion_logica.alineado_izq)
+        self.sensor_der.set_valor(camion_logica.alineado_der)
+        self.sensor_distancia.set_valor(camion_logica.distancia_al_muelle)
 
-        if not self.abrir_cortina():
-            return
-        if not self.levantar_rampa():
-            return
-        if not self.bajar_rampa():
-            return
-        
-        self.encender_luz_unica(self.luz_verde)
-        print(f"[INFO] Camion {camion.id} acoplado correctamente.")
+        if self.estado_acoplamiento == "VERIFICANDO_ALINEACION":
+            if not self.verificar_alineacion(camion_logica): 
+                return False 
+            self.estado_acoplamiento = "VERIFICANDO_DISTANCIA"
+            self.tiempo_espera_actual = 0
 
-    def abrir_cortina(self):
-        try:
+        if self.estado_acoplamiento == "VERIFICANDO_DISTANCIA":
+            if self.verificar_distancia(camion_logica.distancia_al_muelle):
+                self.encender_luz_unica(self.luz_verde)
+                self.estado_acoplamiento = "ABRIENDO_CORTINA"
+                self.tiempo_espera_actual = 0
+            else:
+                self.encender_luz_unica(self.luz_roja)
+                self.tiempo_espera_actual += delta_time_seg
+                if self.tiempo_espera_actual > self.tiempo_maximo_espera_seg:
+                    self.estado_acoplamiento = "TIMEOUT_DISTANCIA"
+                    self.encender_luz_unica(self.luz_roja)
+                    return False
+                return True
+
+        TIEMPO_OPERACION_CORTINA = 2
+        TIEMPO_OPERACION_RAMPA_LEVANTA = 2
+        TIEMPO_OPERACION_RAMPA_BAJA = 1
+
+        if self.estado_acoplamiento == "ABRIENDO_CORTINA":
             self.encender_luz_unica(self.luz_amarilla)
-            self.motor_cortina.activar()
-            time.sleep(2)
-            self.motor_cortina.desactivar()
-            return True
-        except Exception as e:
-            print(f"[ERROR] Fallo al abrir la cortina: {e}")
-            return False
-        
-    def levantar_rampa(self):
-        try:
+            if not self.motor_cortina.estado:
+                self.motor_cortina.activar()
+                self.tiempo_espera_actual = 0
+
+            self.tiempo_espera_actual += delta_time_seg
+            if self.tiempo_espera_actual >= TIEMPO_OPERACION_CORTINA:
+                self.motor_cortina.desactivar()
+                self.estado_acoplamiento = "LEVANTANDO_RAMPA"
+                self.tiempo_espera_actual = 0
+            else:
+                return True
+
+        if self.estado_acoplamiento == "LEVANTANDO_RAMPA":
             self.encender_luz_unica(self.luz_amarilla)
-            self.motor_rampa.activar()
-            time.sleep(2)
-            return True
-        except Exception as e:
-            print(f"[ERROR] Fallo al levantar rampa: {e}")
+            if not self.motor_rampa.estado:
+                self.motor_rampa.activar()
+                self.tiempo_espera_actual = 0
+
+            self.tiempo_espera_actual += delta_time_seg
+            if self.tiempo_espera_actual >= TIEMPO_OPERACION_RAMPA_LEVANTA:
+                self.estado_acoplamiento = "BAJANDO_RAMPA"
+                self.tiempo_espera_actual = 0
+            else:
+                return True
+
+        if self.estado_acoplamiento == "BAJANDO_RAMPA":
+            self.encender_luz_unica(self.luz_amarilla)
+            if not self.motor_rampa.estado:
+                pass
+
+            self.tiempo_espera_actual += delta_time_seg
+            if self.tiempo_espera_actual >= TIEMPO_OPERACION_RAMPA_BAJA:
+                self.motor_rampa.desactivar()
+                self.encender_luz_unica(self.luz_verde)
+                self.estado_acoplamiento = "ACOPLADO"
+                return False
+            else:
+                return True
+
+        if self.estado_acoplamiento == "ACOPLADO":
             return False
-        
-    def bajar_rampa(self):
-        try:
-            time.sleep(1)
-            self.motor_rampa.desactivar()
-            return True
-        except Exception as e:
-            print(f"[ERROR] Fallo al bajar rampa: {e}")
+
+        if "ERROR" in self.estado_acoplamiento or "TIMEOUT" in self.estado_acoplamiento:
             return False
+
+        return True
+
+    def reset_sistema(self):
+        self.motor_cortina.desactivar()
+        self.motor_rampa.desactivar()
+        self.luz_roja.apagar()
+        self.luz_amarilla.apagar()
+        self.luz_verde.apagar()
+        self.sensor_izq.set_valor(False)
+        self.sensor_der.set_valor(False)
+        self.sensor_distancia.set_valor(100)
+        self.estado_acoplamiento = "INICIO"
+        self.tiempo_espera_actual = 0
