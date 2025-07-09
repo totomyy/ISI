@@ -1,32 +1,24 @@
-import time
-# Dispositivos simulados
-
-
 class Motor:
     def __init__(self, nombre):
         self.nombre = nombre
-        self.estado = False
+        self.estado = False 
 
     def activar(self):
         self.estado = True
-        print(f"[INFO] Motor {self.nombre} activado.")
 
     def desactivar(self):
         self.estado = False
-        print(f"[INFO] Motor {self.nombre} desactivado.")
 
 class Luz:
     def __init__(self, color):
         self.color = color
-        self.estado = False
+        self.encendida = False 
 
     def encender(self):
-        self.estado = True
-        print(f"[INFO] Luz {self.color.upper()} encendida.")
+        self.encendida = True
 
     def apagar(self):
-        self.estado = False
-        print(f"[INFO] Luz {self.color.upper()} apagada.")
+        self.encendida = False
 
 class Sensor:
     def __init__(self, nombre, valor_inicial=0):
@@ -38,29 +30,27 @@ class Sensor:
         if not self.activo:
             raise Exception(f"[ERROR] Sensor {self.nombre} no responde.")
         return self.valor
-    
+
     def set_valor(self, valor):
         self.valor = valor
 
     def desactivar(self):
         self.activo = False
 
-
-# Camion
-
-
-class Camion:
+class Camion: 
     def __init__(self, id_camion, distancia_inicial, alineado_izq=True, alineado_der=True):
         self.id = id_camion
-        self.distancia = distancia_inicial
+        self.x = 0 
+        self.y = 0 
+        self.distancia_al_muelle = distancia_inicial 
         self.alineado_izq = alineado_izq
         self.alineado_der = alineado_der
+        self.acoplado_a = None 
 
-    def acercarse(self, metros):
+    def acercarse(self, metros): 
         if metros < 0:
             raise ValueError("La distancia a avanzar debe ser positiva.")
-        self.distancia = max (0, self.distancia - metros)
+        self.distancia_al_muelle = max (0, self.distancia_al_muelle - metros)
 
     def esta_alineado(self):
         return self.alineado_izq and self.alineado_der
-    
